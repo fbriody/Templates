@@ -1,0 +1,16 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+	\draw [step=0.5] (-1.4,-1.4) grid (1.4,1.4);
+\end{tikzpicture}
+\end{document}
+
+
+The new version 1.0 standalone now has the ability to call the above command line (and others) automatically, e.g.:
+\documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+or simply (using default setting 300dpi, no resizing, PNG):
+\documentclass[convert]{standalone}
+%This needs the -shell-escape compiler option to allow the execution of the conversion program from within the LaTeX document.
+%%%%%%%%%%%%%%%%%%%%%%%%%
