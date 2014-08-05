@@ -1,0 +1,121 @@
+\documentclass[9pt, oneside]{extarticle}   	% use "amsart" instead of "article" for AMSLaTeX format
+%\documentclass[9pt,twocolumn,oneside]{extarticle}   	% use for two column
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex								
+\usepackage[margin=2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{tikz,adjust box}			%adjustbox is for figures that span 2 columns
+\usepackage{dashrule}				%used to make dashed line in text
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{fancyhdr}				%used to put draft in header
+\DeclareMathOperator{\arcsec}{arcsec}	%arcsec, arccsc... not defined inamsmath
+\usepackage{exsheets}				%Formats questions and solutions
+\SetupExSheets{solution/print=false,question/name={},solution/name={}}		%Solutions on or off; 
+\SetupExSheets{headings=runin}		% Puts questions next to number
+\SetupExSheets{use-classes={easy,medium,hard}}	% Print questions by difficulty level
+%\usepackage{natbib,endnotes}			%Bibliography and Footnote to endnote
+\usepackage{title sec}				%Format section titles to include horizontal line
+\usepackage{enumitem}				%Allow lists to be a, b, c and not 1, 2, 3
+
+\setenumerate[0]{label=(\alph*)}
+\let\footnote=\endnote
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+\newcommand{\calc}{\protect\includegraphics[height = 2.5ex]{images/calc.png}}  
+
+\newcommand{\thedate}{8/25/2014}
+\newcommand{\theexam}{Notes \S 1.3 Domain and Range}
+\newcommand{\thecourse}{PreCalculus $\infty$ Briody}
+
+%%%%%%Macros: begin question cntrl command Q or S for solution
+\title{Problem Solving}
+\author{PHS}
+\date{today}							% Activate to display a given date or no date
+%\chead{draft\_draft\_draft\_draft\_draft\_draft}
+\begin{document}
+\pagestyle{fancy}
+\lhead{\thecourse} \chead{\theexam} \rhead{\thedate}
+\lfoot{} \cfoot{\thepage} \rfoot{}
+\renewcommand{\headrulewidth}{0.4pt} \renewcommand{\footrulewidth}{0.4pt}
+\thispagestyle{plain}
+
+\parindent 0ex
+\textbf{\thecourse} \hfill  \textbf{Name:}
+\makebox[6cm]{\hrulefill}
+
+\textbf{\theexam} \hfill \textbf{\thedate}
+\rule[1ex]{\textwidth}{.1pt}
+{\large {\bf Objectives} You should be able to find the allowed inputs ({\bf domain}) and resulting outputs ({\bf range}) for given functions. Be especially careful with functions that contain fractions and/or square roots. Please use interval notation.\\
+\hrule 
+\kern3pt
+%\section{Functions}
+%\input{subsections/func} 
+\begin{question}[class=easy]
+Suppose $p(x)=2\sqrt{x}+3$.
+\begin{enumerate}
+\item Is there a value of $x$ for which $p(x)=5$?
+\item What is the domain of $p$?
+\item \label{range} \calc\ What is the range of $p$? Explain. 
+\item \calc\ Does the answer to \ref{range} change if  $4\leq x\leq9$? Explain.
+\end{enumerate}
+\end{question}
+\begin{solution}
+\begin{enumerate}
+\item $x=1$
+\item $[0,\infty)$
+\item $[3,\infty)$
+\item $[7,9]$
+\end{enumerate}
+\cite[p.6]{AOPS}
+\end{solution}
+
+\begin{question}[class=medium]
+Find the domain (and range?) of each of the following functions:
+\begin{enumerate}
+\item $A(x)=4x^{2}+1$
+\item $o(x)=3+\sqrt{16-(x-3)^{2}}$
+\item $P(x)=\frac{1}{3+\sqrt{x+1}}$
+\item $S(x)=\frac{12x-9}{6-9x}$
+\end{enumerate}
+\end{question}
+\begin{solution}
+\begin{enumerate}
+\item Domain: $\mathbb{R}$ Range: $[1,+\infty)$
+\item Domain: $[-1,7]$ Range: $[3,7]$
+\item Domain: $[-1,+\infty)$ Range: $(0,1/3]$
+\item Domain: All $\mathbb{R}$ except 2/3 Range: All $\mathbb{R}$ except -4/3
+\end{enumerate}¥ \cite[p.26]{AOPS}
+\end{solution}
+
+\begin{question}[class=medium]
+Find the domain of $g(t)=\frac{2t-4}{\frac{1}{t}-\frac{1}{3t-4}}$.
+\end{question}
+\begin{solution}
+$[5/2,3)\cup (3,+\infty)$ \cite[p.7]{AOPS}
+\end{solution}
+
+\begin{question}[class=medium]
+Find the domain of each of the following functions:
+\begin{enumerate}
+\item $f(x)=\frac{1}{\sqrt{2x-5}}+\sqrt{9-3x}$
+\item $f(x)=|\sqrt{x}-2|+|\sqrt{x-2}|$
+\item $g(x)=\sqrt{|x|-2}+\sqrt{|x-3|}$
+\end{enumerate}¥
+\end{question}
+\begin{solution}
+\begin{enumerate}
+\item $(5/2,3]$
+\item $[2,+\infty)$
+\item $(-\infty,-2]\cup [2,\infty)$
+\end{enumerate}¥ \cite[p.26]{AOPS}
+\end{solution}
+\newpage
+\begin{multicols}{2}
+\section{SOLUTIONS}
+\printsolutions
+\bibliographystyle{te}
+\bibliography{temp}
+\end{multicols}
+%\theendnotes
+\end{document}
