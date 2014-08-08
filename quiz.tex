@@ -12,20 +12,21 @@
 \usepackage{microtype}
 \usepackage{comment} %comment out blocks
 \usepackage{fancyhdr}
-\fancypagestyle{nocalc}{%
-	\lhead{} \chead{{\bf \Large NO CALCULATOR}}	\rhead{ }
-	\lfoot{} \cfoot{} \rfoot{}
-	\renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt}
-}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Change these appropriately.
 \newcommand{\thedate}{8/26/2012}
 \newcommand{\theexam}{Quiz \S1.3 Domain and Range}
 \newcommand{\thecourse}{PreCalculus $\infty$ Briody}
+\newcommand{\calcnocalc}{NO CALCULATOR}
 \newcommand{\theversion}{1}
 \SetVariations{3}%Versions
 \variant{\theversion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fancypagestyle{nocalc}{%
+	\lhead{} \chead{{\bf \Large \calcnocalc}}	\rhead{ }
+	\lfoot{} \cfoot{} \rfoot{}
+	\renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt}
+}
 
 \begin{document}
 \pagestyle{fancy}
