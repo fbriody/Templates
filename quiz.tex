@@ -1,0 +1,85 @@
+\documentclass{extarticle}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage[9pt]{extsizes}
+\usepackage[margin=1.3cm,headsep=0cm]{geometry}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage{exsheets}
+\SetupExSheets{solution/print=false,question/name={},solution/name={}}	%Solutions on or off; 
+\SetupExSheets{headings=runin}								% Puts questions next to number
+\SetupExSheets{use-classes={easy,medium,hard}}					% Print questions by difficulty level
+\SetupExSheets[points]{name=pts.}								% Puts questions next to number
+\usepackage{microtype}
+\usepackage{comment} %comment out blocks
+\usepackage{fancyhdr}
+\fancypagestyle{nocalc}{%
+	\lhead{} \chead{{\bf \Large NO CALCULATOR}}	\rhead{ }
+	\lfoot{} \cfoot{} \rfoot{}
+	\renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Change these appropriately.
+\newcommand{\thedate}{8/26/2012}
+\newcommand{\theexam}{Quiz \S1.3 Domain and Range}
+\newcommand{\thecourse}{PreCalculus $\infty$ Briody}
+\newcommand{\theversion}{1}
+\SetVariations{3}%Versions
+\variant{\theversion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\pagestyle{fancy}
+\lhead{\thecourse} \chead{\theexam} \rhead{\thedate}
+\lfoot{} \cfoot{\thepage} \rfoot{}
+\renewcommand{\headrulewidth}{0.4pt} \renewcommand{\footrulewidth}{0pt}
+\thispagestyle{nocalc}
+\parindent 0ex
+\textbf{\thecourse} \hfill  \textbf{Name:}
+\makebox[6cm]{\hrulefill}
+
+\textbf{\theexam} \hfill \textbf{\thedate}
+\begin{center}
+{\Large
+\begin{tabular}{|l|*{\numberofquestions}{c|}c|}\hline
+%  Question & \ForEachQuestion{\QuestionNumber{#1}\iflastquestion{}{&}} & Total \\ \hline
+  Question & \ForEachQuestion{\GetQuestionProperty{counter}{#1}\iflastquestion{}{&}} & Total \\ \hline
+  Points   & \ForEachQuestion{\GetQuestionProperty{points}{#1}\iflastquestion{}{&}} & \pointssum* \\ \hline
+  Score  & \ForEachQuestion{\iflastquestion{}{&}} & \\ \hline
+\end{tabular}
+}
+\end{center}
+\rule[1ex]{\textwidth}{.1pt}
+{\large Please produce {\bf neat} and {\bf organized} solutions. Be sure to \framebox{box} your answers when appropriate. Messy or unsupported answers will receive no credit. If you would like scratch paper please ask. Good luck.}\\
+\rule[1ex]{\textwidth}{.1pt}
+%%%%%%%%%%%%%%%%%%QUESTIONS%%%%%%%%%%%%%%%%%%%%%%
+\begin{question}[class=medium]\addpoints*{2}
+Find the domain of $f(x)=\frac{1}{x-\vary{2}{4}{6}}$. 
+\end{question}
+\begin{solution}
+$(-\infty,\vary{2}{4}{6})(\vary{2}{4}{6},\infty)$
+\end{solution}
+
+\begin{question}[class=medium]\addpoints*{4}
+Find the domain and range of $g(x)=\sqrt{\vary{3}{5}{7}-x}+\vary{2}{4}{6}$.
+\end{question}
+\begin{solution}
+Domain: $(-\infty,\vary{3}{5}{7})$ Range:$[\vary{2}{4}{6},\infty]$
+\end{solution}
+
+
+\begin{question}[class=medium]\addpoints*{3}
+Find the domain of $h(x)=\frac{1}{x-\vary{4}{6}{8}}+\sqrt{x}$.
+\end{question}
+\begin{solution}
+$[0,\vary{4}{6}{8})\cup(\vary{4}{6}{8},\infty)$ 
+\end{solution}
+
+
+%%%%%%%%%%%%%%%%%%QUESTIONS%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+Answers for version \theversion
+\printsolutions
+\end{document}
+
+
+
