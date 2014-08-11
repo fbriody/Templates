@@ -11,11 +11,13 @@
 \SetupExSheets[points]{name=pts.}								% Puts questions next to number
 \usepackage{microtype}
 \usepackage{comment} %comment out blocks
+\usepackage{enumitem}				%Allow lists to be a, b, c and not 1, 2, 3
+\setenumerate[0]{label=(\alph*)}
 \usepackage{fancyhdr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Change these appropriately.
 \newcommand{\thedate}{8/26/2012}
-\newcommand{\theexam}{Quiz \S1.3 Domain and Range}
+\newcommand{\theexam}{Quiz \S1.6 Rates}
 \newcommand{\thecourse}{PreCalculus $\infty$ Briody}
 \newcommand{\calcnocalc}{NO CALCULATOR}
 \newcommand{\theversion}{1}
@@ -27,6 +29,7 @@
 	\lfoot{} \cfoot{} \rfoot{}
 	\renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt}
 }
+\newcommand{\graphht}{\vary{10}{15}{10}} \newcommand{\graphdpth}{-20}
 
 \begin{document}
 \pagestyle{fancy}
@@ -53,34 +56,75 @@
 {\large Please produce {\bf neat} and {\bf organized} solutions. Be sure to \framebox{box} your answers when appropriate. Messy or unsupported answers will receive no credit. If you would like scratch paper please ask. Good luck.}\\
 \rule[1ex]{\textwidth}{.1pt}
 %%%%%%%%%%%%%%%%%%QUESTIONS%%%%%%%%%%%%%%%%%%%%%%
-\begin{question}[class=medium]\addpoints*{2}
-Find the domain of $f(x)=\frac{1}{x-\vary{2}{4}{6}}$. 
+
+\begin{question}[class=medium]\addpoints*{6}
+In parts \ref{MOA} through \ref{MOF}, use the velocity/time graph to answer the questions. Assume that North is positive and South is negative. You start your journey from home at noon.
+
+\begin{centering}
+%%%%%%%%%%GRAPH%%%%%%%%%%%%%
+\begin{tikzpicture}[y=.1cm, x=1cm]
+%\draw[style=help lines, ystep=5, xstep=1] (-2,-35) grid  (12,35);
+\draw[thick,-] (-.5,0) -- coordinate (x axis mid) (8,0); %node[anchor=north west] {$x$};
+\draw[thick,-] (0,-25) -- coordinate (y axis mid) (0,25);% node[anchor=north west] {$y$};
+\foreach \x in {1,2,3,4,5,6,7}
+    \draw (\x ,1pt) -- (\x ,-1pt) node[anchor=north] {$\x$};
+\foreach \y in { -20, -10, 10, 20}
+    \draw (1pt,\y ) -- (-1pt,\y ) node[anchor=east] {$\y$};
+\node at (7.3,-5) {Time ($hours$)};
+%\draw[ultra thick,-] (0,0)--(0,10)--(2,10)--(4,0)--(4,-20)--(6,-20)--(6,0);
+\vary{\draw[ultra thick,-] (0,0)--(0,10)--(2,10)--(4,0)--(4,-20)--(6,-20)--(6,0);}{\draw[ultra thick,-] (0,0)--(0,15)--(2,15)--(4,0)--(4,-15)--(6,-15)--(6,0);}{\draw[ultra thick,-] (0,0)--(0,10)--(2,10)--(4,0)--(4,-15)--(6,-15)--(6,0);}
+\node[rotate=90, above=0.8cm] at (y axis mid) {Velocity ($miles\, per\, hour$)};
+\end{tikzpicture}\\
+%%%%%%%%%%GRAPH%%%%%%%%%%%%%
+\end{centering}
+\begin{enumerate}
+\item \label{MOA} Approximately how many miles would your odometer say you drove between noon and \vary{6}{5}{6}PM?
+\item When is your velocity constant?
+\item When is your velocity decreasing?
+\item When are you moving \vary{South}{North}{North}?
+\item When (if ever) will you return home? Explain.
+\item \label{MOF} On the grid below sketch a (Time, Distance) graph that represents how far you have traveled from Noon to 2PM ($t=0$ to $t=2$).
+\begin{center}
+\begin{tikzpicture}[y=.5cm, x=.5cm]
+\draw[style=help lines, ystep=1, xstep=1] (0,0) grid  (20,10);
+\end{tikzpicture} 
+\end{center}
+\end{enumerate}
 \end{question}
 \begin{solution}
-$(-\infty,\vary{2}{4}{6})(\vary{2}{4}{6},\infty)$
+\begin{enumerate}
+\item \vary{70 miles}{75 miles}{60 miles}
+\item (0,2) and (4,6) hours
+\item (2,4) hours
+\item \vary{(4,6) hours}{(0,4) hours}{(0,4) hours}
+\item \vary{$5\frac{1}{2}$ hours}{Never}{6 hours}
+\item \quad\\
+	\begin{tikzpicture}[y=.1cm, x=1cm]
+	%\draw[style=help lines, ystep=5, xstep=1] (-2,-35) grid  (12,35);
+	\draw[thick,-] (-.5,0) -- coordinate (x axis mid) (3,0); %node[anchor=north west] {$x$};
+	\draw[thick,-] (0,-5) -- coordinate (y axis mid) (0,35);% node[anchor=north west] {$y$};
+	\foreach \x in {1,2}
+	    \draw (\x ,1pt) -- (\x ,-1pt) node[anchor=north] {$\x$};
+	\foreach \y in {10, 20,30}
+	    \draw (1pt,\y ) -- (-1pt,\y ) node[anchor=east] {$\y$};
+	\node at (3,5) {Time ($hours$)};
+	%\draw[ultra thick,-] (0,0)--(0,10)--(2,10)--(4,0)--(4,-20)--(6,-20)--(6,0);
+	\vary{\draw[ultra thick,-] (0,0)--(2,20);}{\draw[ultra thick,-] (0,0)--(2,30);}{\draw[ultra thick,-] (0,0)--(2,20);}
+	\node[rotate=90, above=0.8cm] at (y axis mid) {Distance ($miles$)};
+	\end{tikzpicture}\\
+\end{enumerate}¥
 \end{solution}
-
-\begin{question}[class=medium]\addpoints*{4}
-Find the domain and range of $g(x)=\sqrt{\vary{3}{5}{7}-x}+\vary{2}{4}{6}$.
-\end{question}
-\begin{solution}
-Domain: $(-\infty,\vary{3}{5}{7})$ Range:$[\vary{2}{4}{6},\infty]$
-\end{solution}
-
 
 \begin{question}[class=medium]\addpoints*{3}
-Find the domain of $h(x)=\frac{1}{x-\vary{4}{6}{8}}+\sqrt{x}$.
+Given two functions: $w(x)=x^{\vary{2}{3}{4}}$ and $h(x)=\vary{2}{3}{4}x^{\vary{}{2}{3}}$
+Write the equation of a line with slope $h(x)$ that intersects $y=w(x)$ at the point where $x=2$.
 \end{question}
 \begin{solution}
-$[0,\vary{4}{6}{8})\cup(\vary{4}{6}{8},\infty)$ 
+$y-\vary{4}{8}{16}=\vary{4}{12}{32}(x-2)$
 \end{solution}
-
 
 %%%%%%%%%%%%%%%%%%QUESTIONS%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 Answers for version \theversion
 \printsolutions
 \end{document}
-
-
-
