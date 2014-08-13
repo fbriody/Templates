@@ -1,0 +1,66 @@
+\documentclass{extarticle}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage[9pt]{extsizes}
+\usepackage[margin=1.3cm,headsep=0cm]{geometry}
+\usepackage[colorlinks=false]{hyperref}
+\usepackage{exsheets}
+\SetupExSheets{solution/print=false,question/name={},solution/name={}}	%Solutions on or off; 
+\SetupExSheets{headings=runin}								% Puts questions next to number
+\SetupExSheets{use-classes={easy,medium,hard}}					% Print questions by difficulty level
+\SetupExSheets[points]{name=pts.}								% Puts questions next to number
+\SetupExSheets{headings = margin-nr}
+\usepackage{microtype}
+\usepackage{comment} %comment out blocks
+\usepackage{enumitem}				%Allow lists to be a, b, c and not 1, 2, 3
+\setenumerate[0]{label=(\alph*)}
+\usepackage{natbib,endnotes}			%Bibliography and Footnote to endnote
+\usepackage{catchfilebetweentags}
+\newcommand{\calc}{\protect\includegraphics[height = 2.5ex]{../400_Problem_Sets/ProblemSolving/images/calc.png}}  
+\usepackage{fancyhdr}
+%%%%%%%%%%%%%%%%%%%%%SourceAndVersion%%%%%%%%%%%%%%%%%%
+\newcommand{\quesfile}{03/3_1_Q_ques.tex}
+\ExecuteMetaData[\quesfile]{tag1}
+\newcommand{\theversion}{1}
+\variant{\theversion}
+%%%%%%%%%%%%%%%%%%%%%SourceAndVersion%%%%%%%%%%%%%%%%%%
+\fancypagestyle{nocalc}{%
+	\lhead{} \chead{{\bf \Large \calcnocalc}}	\rhead{ }
+	\lfoot{} \cfoot{} \rfoot{}
+	\renewcommand{\headrulewidth}{0pt} \renewcommand{\footrulewidth}{0pt}
+}
+\newcommand{\graphht}{\vary{10}{15}{10}} \newcommand{\graphdpth}{-20}
+
+\begin{document}
+\pagestyle{fancy}
+\lhead{\thecourse} \chead{\theexam} \rhead{\thedate}
+\lfoot{} \cfoot{\thepage} \rfoot{}
+\renewcommand{\headrulewidth}{0.4pt} \renewcommand{\footrulewidth}{0pt}
+\thispagestyle{nocalc}
+\parindent 0ex
+\textbf{\thecourse} \hfill  \textbf{Name:}
+\makebox[6cm]{\hrulefill}
+
+\textbf{\theexam} \hfill \textbf{\thedate}
+\begin{center}
+{\Large
+\begin{tabular}{|l|*{\numberofquestions}{c|}c|}\hline
+%  Question & \ForEachQuestion{\QuestionNumber{#1}\iflastquestion{}{&}} & Total \\ \hline
+  Question & \ForEachQuestion{\GetQuestionProperty{counter}{#1}\iflastquestion{}{&}} & Total \\ \hline
+  Points   & \ForEachQuestion{\GetQuestionProperty{points}{#1}\iflastquestion{}{&}} & \pointssum* \\ \hline
+  Score  & \ForEachQuestion{\iflastquestion{}{&}} & \\ \hline
+\end{tabular}
+}
+\end{center}
+\rule[1ex]{\textwidth}{.1pt}
+{\large Please produce {\bf neat} and {\bf organized} solutions. Be sure to \framebox{box} your answers when appropriate. Messy or unsupported answers will receive no credit. If you would like scratch paper please ask. Good luck.}\\
+\rule[1ex]{\textwidth}{.1pt}
+%%%%%%%%%%%%%%%%%%QUESTIONS%%%%%%%%%%%%%%%%%%%%%%
+\ExecuteMetaData[\quesfile]{tag2}
+%%%%%%%%%%%%%%%%%%QUESTIONS%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+Answers for version \theversion  \mbox{ of } \versions
+\printsolutions
+\bibliographystyle{../400_Problem_Sets/ProblemSolving/te}
+\bibliography{../400_Problem_Sets/ProblemSolving/temp}
+\end{document}

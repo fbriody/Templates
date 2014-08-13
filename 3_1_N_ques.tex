@@ -1,0 +1,83 @@
+%<*tag1>
+\newcommand{\thedate}{8/27/2014}
+\newcommand{\theexam}{Notes \S 3.1 Functions}
+\newcommand{\thecourse}{PreCalculus $\infty$ Briody}
+%</tag1>
+
+%<*tag2>
+{\large {\bf Objectives}} You should be able to:
+\begin{itemize}
+\item apply the definition of a function
+\item use function notation
+\end{itemize}
+%</tag2>
+
+%<*tag3>
+
+\begin{question}[class=easy]
+Given $g(a,b,c)=3a-2b+7c^{2}$.
+\begin{enumerate}
+\item Evaluate $g(3,-5,-1)$.
+\item Find $b$ if $g(b,2,-1)=21$.
+\end{enumerate}
+\end{question}
+\begin{solution}
+\begin{enumerate}
+\item 26
+\item $b=6$
+\end{enumerate} \cite{AOPS}
+\end{solution}
+
+\begin{question}[class=medium]
+Suppose $t(x)=ax^{4}+bx^{2}+x+5$ where $a$ and $b$ are constants. Find $t(4)$ if $t(-4)=3.$ 
+\end{question}
+\begin{solution}
+$t(4)=4$ \cite{AOPS}
+\end{solution}
+
+\begin{question}[class=easy]
+If $f((x)=\frac{x+1}{x-1}$ and $|x|\neq1$. Simplify $f(x)\cdot f(-x)$.
+\end{question}
+\begin{solution}
+1 \cite{AOPS}
+\end{solution}
+
+\begin{question}[class=medium]
+Let $f(x)=ax^{2}+bx+c$ and $g(x)=ax^{2}-bx+c$. If $f(1)=g(1)+2$ and $f(2)=2$, find $g(2)$.
+\end{question}
+\begin{solution}
+$g(2)=-2$ \cite[p.26]{AOPS}
+\end{solution}
+
+\begin{question}[class=medium]
+Let $f(x,y,z)=\frac{x-z}{y-z}$. If $f(a,b,c)=1$, what is the value of $f(a,c,b)$?
+\end{question}
+\begin{solution}
+$f(a,c,b)=0$ \cite[p.27]{AOPS}
+\end{solution}
+
+\begin{question}[class=hard]
+Let $f(t)=\frac{t}{1-t}$, where $t\neq 1$. If $y=f(x)$, then $x$ can be expressed as which of the following: $$f(1/y),-f(y),-f(-y),f(-y),f(y)?$$
+\end{question}
+\begin{solution}
+$-f(-y)$ \cite[p.27]{AHSME}
+\end{solution}
+
+\begin{question}[class=easy]
+The graph of $y=f(x)$ is pictured below.\\
+\begin{tikzpicture}[scale=.75]
+%\draw[gray] (0,0) grid (5,4);
+\draw[step=1cm,gray, thin] (0,0) grid (4.5,3.5);
+\draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {x};
+\draw[thick,->] (0,0) -- (0,3.5) node[anchor=south east] {y};
+\foreach \x in {0,1,2,3,4}
+    \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
+\foreach \y in {0,1,2,3}
+    \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=south east] {$\y$};
+\draw[very thick,-](-.5,1.75)--(2,3)--(3,0)--(4.5,1.5);
+\end{tikzpicture}\\
+\begin{enumerate}
+\item According to the graph what is $f(2)$?
+\item According to the graph for what values of $a$ is $f(a)=2$?
+\end{enumerate}
+\end{question}%</tag3>

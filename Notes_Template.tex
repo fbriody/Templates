@@ -1,0 +1,63 @@
+\documentclass[9pt, oneside]{extarticle}   	% use "amsart" instead of "article" for AMSLaTeX format
+%\documentclass[9pt,twocolumn,oneside]{extarticle}   	% use for two column
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex								
+\usepackage[margin=2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{tikz,adjust box}			%adjustbox is for figures that span 2 columns
+\usepackage{dashrule}				%used to make dashed line in text
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{fancyhdr}				%used to put draft in header
+\DeclareMathOperator{\arcsec}{arcsec}	%arcsec, arccsc... not defined inamsmath
+\usepackage{exsheets}				%Formats questions and solutions
+\SetupExSheets{solution/print=false,question/name={},solution/name={}}		%Solutions on or off; 
+\SetupExSheets{headings=runin}		% Puts questions next to number
+\SetupExSheets{headings = margin-nr}
+\SetupExSheets{use-classes={easy,medium,hard}}	% Print questions by difficulty level
+\usepackage{natbib,endnotes}			%Bibliography and Footnote to endnote
+\usepackage{catchfilebetweentags}
+\usepackage{title sec}				%Format section titles to include horizontal line
+\usepackage{enumitem}				%Allow lists to be a, b, c and not 1, 2, 3
+
+\setenumerate[0]{label=(\alph*)}
+%\let\footnote=\endnote
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+\newcommand{\calc}{\protect\includegraphics[height = 2.5ex]{../400_Problem_Sets/ProblemSolving/images/calc.png}}  
+
+%%%%%%%%%%%%%%%%%%%%SOURCE%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\quesfile}{03/3_1_N_ques.tex}
+%%%%%%%%%%%%%%%%%%%%SOURCE%%%%%%%%%%%%%%%%%%%%%%%
+\ExecuteMetaData[\quesfile]{tag1}
+
+\title{Problem Solving}
+\author{PHS}
+\date{today}							% Activate to display a given date or no date
+%\chead{draft\_draft\_draft\_draft\_draft\_draft}
+\begin{document}
+\pagestyle{fancy}
+\lhead{\thecourse} \chead{\theexam} \rhead{\thedate}
+\lfoot{} \cfoot{\thepage} \rfoot{}
+\renewcommand{\headrulewidth}{0.4pt} \renewcommand{\footrulewidth}{0.4pt}
+\thispagestyle{plain}
+
+\parindent 0ex
+\textbf{\thecourse} \hfill  \textbf{Name:}
+\makebox[6cm]{\hrulefill}
+
+\textbf{\theexam} \hfill \textbf{\thedate}
+\rule[1ex]{\textwidth}{.1pt}
+\ExecuteMetaData[\quesfile]{tag2}
+\hrule 
+\kern3pt
+\ExecuteMetaData[\quesfile]{tag3}
+\newpage
+\begin{multicols}{2}
+\section{SOLUTIONS}
+\printsolutions
+\bibliographystyle{../400_Problem_Sets/ProblemSolving/te}
+\bibliography{../400_Problem_Sets/ProblemSolving/temp}
+\end{multicols}
+%\theendnotes
+\end{document}
