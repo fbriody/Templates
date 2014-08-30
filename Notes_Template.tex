@@ -1,19 +1,20 @@
-\documentclass[9pt, oneside]{extarticle}   	% use "amsart" instead of "article" for AMSLaTeX format
+\documentclass[10pt, oneside]{extarticle}   	% use "amsart" instead of "article" for AMSLaTeX format
 %\documentclass[9pt,twocolumn,oneside]{extarticle}   	% use for two column
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 								% TeX will automatically convert eps --> pdf in pdflatex								
-\usepackage[margin=2cm]{geometry}
+\usepackage[margin=1.3cm]{geometry}
 \usepackage{amssymb}
 \usepackage{tikz,adjust box}			%adjustbox is for figures that span 2 columns
 \usepackage{dashrule}				%used to make dashed line in text
 \usepackage{amsmath}
 \usepackage{multicol}
+\usepackage{array}
 \usepackage{fancyhdr}				%used to put draft in header
 \DeclareMathOperator{\arcsec}{arcsec}	%arcsec, arccsc... not defined inamsmath
 \usepackage{exsheets}				%Formats questions and solutions
 \SetupExSheets{solution/print=false,question/name={},solution/name={}}		%Solutions on or off; 
 \SetupExSheets{headings=runin}		% Puts questions next to number
-\SetupExSheets{headings = margin-nr}
+%\SetupExSheets{headings = margin-nr}
 \SetupExSheets{use-classes={easy,medium,hard}}	% Print questions by difficulty level
 \usepackage{natbib,endnotes}			%Bibliography and Footnote to endnote
 \usepackage{catchfilebetweentags}
@@ -27,7 +28,7 @@
 \newcommand{\calc}{\protect\includegraphics[height = 2.5ex]{../400_Problem_Sets/ProblemSolving/images/calc.png}}  
 
 %%%%%%%%%%%%%%%%%%%%SOURCE%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\quesfile}{03/3_1_N_ques.tex}
+\newcommand{\quesfile}{01/1_3_H_ques.tex}
 %%%%%%%%%%%%%%%%%%%%SOURCE%%%%%%%%%%%%%%%%%%%%%%%
 \ExecuteMetaData[\quesfile]{tag1}
 
